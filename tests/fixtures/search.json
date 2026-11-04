@@ -1,0 +1,271 @@
+{
+ "status": true,
+ "data": {
+  "structure": [
+   {
+    "id": "vb2AGNY",
+    "section_type": "plp",
+    "uuid": "0e053683-d819-11f1-be86-1ab1273861ea",
+    "is_descriptive": false,
+    "took": 38,
+    "items": [
+     {
+      "id": "nrVx95",
+      "title": "هدفون بلوتوثی کیو سی وای مدل T13X",
+      "price": {
+       "price": 3200000,
+       "discounted_price": 2830000,
+       "discount": 12,
+       "start_at": "2026-11-03 17:40:00",
+       "end_at": "2027-08-22 23:59:00"
+      },
+      "image": {
+       "src": "https://cdn.snappshop.ir/products/92/3f/9b8558ce-a0a3-4ea0-bfdc-4c0b7a0b923f.jpg",
+       "alt": "هدفون بلوتوثی کیو سی وای مدل T13X"
+      },
+      "colors": [
+       {
+        "id": "x0QZq8",
+        "title": "مشکی",
+        "code": "#000000"
+       },
+       {
+        "id": "60rdDw",
+        "title": "سفید",
+        "code": "#FFFFFF"
+       },
+       {
+        "id": "EqO1gy",
+        "title": "بنفش",
+        "code": "#800080"
+       }
+      ],
+      "is_fake": false,
+      "is_ads": false,
+      "href": "/product/snp-1471506485",
+      "in_campaign": {
+       "campaign_name": "",
+       "start_date": "",
+       "end_date": ""
+      },
+      "badge": "خرید قسطی",
+      "rel": "",
+      "target": "",
+      "state": {
+       "rate_count": 0,
+       "rate": 0,
+       "score": 0
+      }
+     },
+     {
+      "id": "p2VPe7",
+      "title": "هدفون بلوتوثی مدل Soundcore R50i",
+      "price": {
+       "price": 2727272,
+       "discounted_price": 1500000,
+       "discount": 45,
+       "start_at": "2026-11-02 10:04:00",
+       "end_at": "2026-12-02 10:04:00"
+      },
+      "image": {
+       "src": "https://cdn.snappshop.ir/products/ed/7b/a0344c93-6f84-40c8-9880-63e1d237ed7b.jpg",
+       "alt": "هدفون بلوتوثی مدل Soundcore R50i"
+      },
+      "colors": [
+       {
+        "id": "60rdDw",
+        "title": "سفید",
+        "code": "#FFFFFF"
+       },
+       {
+        "id": "x0QZq8",
+        "title": "مشکی",
+        "code": "#000000"
+       }
+      ],
+      "is_fake": true,
+      "is_ads": false,
+      "href": "/product/snp-1003969985",
+      "in_campaign": {
+       "campaign_name": "",
+       "start_date": "",
+       "end_date": ""
+      },
+      "badge": "خرید قسطی",
+      "rel": "",
+      "target": "",
+      "state": {
+       "rate_count": 0,
+       "rate": 0,
+       "score": 0
+      }
+     },
+     {
+      "id": "DzZV7K",
+      "title": "هدفون بی سیم بلوتوثی کودک مدل گربه ای",
+      "price": {
+       "price": 1280000
+      },
+      "image": {
+       "src": "https://cdn.snappshop.ir/products/f4/01/9be09099-06d6-4b84-aa78-b8d47704f401.jpg",
+       "alt": "هدفون بی سیم بلوتوثی کودک مدل گربه ای"
+      },
+      "colors": [
+       {
+        "id": "x0QZq8",
+        "title": "مشکی",
+        "code": "#000000"
+       },
+       {
+        "id": "5gv6g8",
+        "title": "صورتی",
+        "code": "#FFC0CB"
+       },
+       {
+        "id": "60rdDw",
+        "title": "سفید",
+        "code": "#FFFFFF"
+       },
+       {
+        "id": "5DzQq4",
+        "title": "آبی",
+        "code": "#0000FF"
+       },
+       {
+        "id": "50aLgW",
+        "title": "سبز",
+        "code": "#00FF00"
+       },
+       {
+        "id": "EqO1gy",
+        "title": "بنفش",
+        "code": "#800080"
+       },
+       {
+        "id": "nqPRgO",
+        "title": "قرمز",
+        "code": "#FF0000"
+       }
+      ],
+      "is_fake": false,
+      "is_ads": true,
+      "href": "/product/snp-1279369556",
+      "in_campaign": {
+       "campaign_name": "",
+       "start_date": "",
+       "end_date": ""
+      },
+      "badge": "خرید قسطی",
+      "rel": "",
+      "target": "",
+      "state": {
+       "rate_count": 0,
+       "rate": 0,
+       "score": 0
+      }
+     }
+    ],
+    "sort": [],
+    "filter": [
+     {
+      "filter_id": "brands",
+      "filter_type": "multiple_select",
+      "title": "برند",
+      "items": [
+       {
+        "id": "qO9M1g",
+        "title": "انکر",
+        "second_title": "Anker",
+        "is_selected": false
+       },
+       {
+        "id": "04lL30",
+        "title": "سامسونگ",
+        "second_title": "Samsung",
+        "is_selected": false
+       },
+       {
+        "id": "gR9GMD",
+        "title": "شیائومی",
+        "second_title": "Xiaomi",
+        "is_selected": false
+       }
+      ]
+     }
+    ],
+    "pagination": {
+     "current_page": 0,
+     "total": 6992,
+     "total_pages": 500,
+     "count": 11,
+     "per_page": 12
+    },
+    "suggested_categories": [
+     {
+      "id": "JqlK0Z",
+      "title": "هدفون",
+      "category": "هدفون، هدست و هندزفری"
+     },
+     {
+      "id": "PD1k06",
+      "title": "هدفون",
+      "category": "لوازم جانبی گجت های پوشیدنی"
+     },
+     {
+      "id": "k0Xxz0",
+      "title": "هدفون",
+      "category": "کابل و تبدیل"
+     }
+    ],
+    "suggested_keywords": [
+     {
+      "id": "PD1k06_1",
+      "title": "هدفون بی سیم",
+      "href": "/search?query=هدفون+بی+سیم"
+     },
+     {
+      "id": "PD1k06_2",
+      "title": "ایرپاد",
+      "href": "/search?query=ایرپاد"
+     },
+     {
+      "id": "PD1k06_3",
+      "title": "هدفون بلوتوثی",
+      "href": "/search?query=هدفون+بلوتوثی"
+     },
+     {
+      "id": "PD1k06_4",
+      "title": "هندزفری بلوتوث",
+      "href": "/search?query=هندزفری+بلوتوث"
+     },
+     {
+      "id": "PD1k06_5",
+      "title": "هدست بلوتوثی",
+      "href": "/search?query=هدست+بلوتوثی"
+     },
+     {
+      "id": "PD1k06_6",
+      "title": "اسپیکر",
+      "href": "/search?query=اسپیکر"
+     },
+     {
+      "id": "PD1k06_7",
+      "title": "هدفون انکر",
+      "href": "/search?query=هدفون+انکر"
+     },
+     {
+      "id": "PD1k06_8",
+      "title": "ساعت هوشمند",
+      "href": "/search?query=ساعت+هوشمند"
+     },
+     {
+      "id": "PD1k06_9",
+      "title": "هندزفری",
+      "href": "/search?query=هندزفری"
+     }
+    ]
+   }
+  ],
+  "top_banners": null
+ }
+}

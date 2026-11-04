@@ -1,0 +1,99 @@
+{
+ "status": true,
+ "data": [
+  {
+   "id": "DBoQGy",
+   "actions": {
+    "vote": null
+   },
+   "bought_attribute": null,
+   "bought_vendor": {
+    "logo": null,
+    "name": "داروخانه دارویاب",
+    "name_en": null
+   },
+   "can": {
+    "update": false,
+    "delete": false
+   },
+   "user": {
+    "first_name": "کاظم"
+   },
+   "advantages": [
+    "همه چی خوب"
+   ],
+   "disadvantages": [],
+   "point": 5,
+   "is_bought": true,
+   "likes": 1,
+   "dislikes": 0,
+   "title": "کیفیت عالی",
+   "comment": "این برای گرفتگی عضلات عالیه از اون پودر های میوه ای بهتر چون که مستقیم وارد بدن میشه و آنها دیگه از ادار خارج میشه خوب نیست",
+   "reply": null,
+   "master_parent_product_id": "",
+   "master_product_id": "0WdnlY",
+   "product_id": "0WdnlY",
+   "order_package_item_id": "pPvpEl",
+   "suggestion_idea": 0,
+   "verification_status": null,
+   "created_at": "2026-10-09 07:28:08",
+   "edited_at": null,
+   "updated_at": "2026-10-09 07:40:49",
+   "images": []
+  },
+  {
+   "id": "0aAYVL",
+   "actions": {
+    "vote": null
+   },
+   "bought_attribute": null,
+   "bought_vendor": {
+    "logo": null,
+    "name": "داروخانه فارایران",
+    "name_en": null
+   },
+   "can": {
+    "update": false,
+    "delete": false
+   },
+   "user": {
+    "first_name": "اکبر"
+   },
+   "advantages": [],
+   "disadvantages": [],
+   "point": 5,
+   "is_bought": true,
+   "likes": 1,
+   "dislikes": 0,
+   "title": "",
+   "comment": "پیک بسیار محترم و شریف بودن. محصول دقیقا همون چیزی که میخواستم بود تا 2028 تاریخ داره و خیلی زود و سالم بدستم رسید",
+   "reply": null,
+   "master_parent_product_id": "",
+   "master_product_id": "0WdnlY",
+   "product_id": "0WdnlY",
+   "order_package_item_id": "v9od8L",
+   "suggestion_idea": 0,
+   "verification_status": null,
+   "created_at": "2026-10-03 22:13:01",
+   "edited_at": null,
+   "updated_at": "2026-10-03 22:22:05",
+   "images": []
+  }
+ ],
+ "meta": {
+  "pagination": {
+   "current_page": 1,
+   "total": 237,
+   "total_pages": 24,
+   "count": 10,
+   "per_page": 10
+  },
+  "links": {
+   "first": "https://apix.snappshop.ir/reviews/v2/product/0WdnlY?page=1&per_page=10",
+   "last": "https://apix.snappshop.ir/reviews/v2/product/0WdnlY?page=237&per_page=10",
+   "prev": "",
+   "next": "https://apix.snappshop.ir/reviews/v2/product/0WdnlY?page=2&per_page=10",
+   "self": "https://apix.snappshop.ir/reviews/v2/product/0WdnlY?page=1&per_page=10"
+  }
+ }
+}

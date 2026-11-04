@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.sepehr071/snappshop-mcp",
+  "title": "Snapp! Shop",
+  "description": "Read-only Snapp! Shop marketplace: search, categories, seller offers in Toman, reviews.",
+  "repository": {
+    "url": "https://github.com/sepehr071/snappshop-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/sepehr071/snappshop-mcp",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "snappshop-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SNAPPSHOP_MCP_PROXY",
+          "description": "Optional Iranian HTTP proxy URL for the Snapp! Shop requests (the site blocks foreign IPs); system proxy settings are ignored. Also accepts a comma-separated list: one is used until it gets blocked or fails to connect, then the next.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

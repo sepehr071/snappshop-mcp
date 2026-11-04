@@ -1,0 +1,285 @@
+{
+ "status": true,
+ "data": {
+  "id": "0WdnlY",
+  "configurable_attribute": [],
+  "variants": [
+   {
+    "variation_id": "0WdnlY",
+    "attribute_ids": [],
+    "vendor": [
+     {
+      "vendor_product_info_id": "dJKG5l",
+      "vendor_id": "gAkLXP",
+      "price": 633000,
+      "special_price": 274200,
+      "special_price_percent_discount": 57,
+      "price_changed_at": "2026-09-13T17:31:10+03:30",
+      "special-price_changed_at": "2026-11-04T02:46:40+03:30",
+      "stock": 10,
+      "vendor_rate": "excellent",
+      "is_available_in_shop": false,
+      "is_available_in_vendor_inventory": true,
+      "show_remaining_stock": false,
+      "warranty_id": "5DjNWD",
+      "shipment": {
+       "normal": {
+        "enabled": false
+       },
+       "asap": {
+        "enabled": true,
+        "has_next_day": false,
+        "next_day_percent": 0
+       },
+       "ship_by_seller": {
+        "enabled": false,
+        "start_time_estimation": 0,
+        "end_time_estimation": 0
+       },
+       "heavy": {
+        "enabled": false
+       },
+       "heavy_ship_by_seller": {
+        "enabled": false
+       },
+       "fbm": {
+        "enabled": true,
+        "fbm_percent": 50
+       }
+      },
+      "snapp_pay_installment": [],
+      "special_price_discount_type": "vendor",
+      "vendor_is_pro": null,
+      "vendor_authenticity": null
+     },
+     {
+      "vendor_product_info_id": "Wna4nO",
+      "vendor_id": "gRyB2r",
+      "price": 642400,
+      "special_price": 277000,
+      "special_price_percent_discount": 57,
+      "price_changed_at": "2026-10-12T20:47:50+03:30",
+      "special-price_changed_at": "2026-11-03T20:05:36+03:30",
+      "stock": 1,
+      "vendor_rate": "excellent",
+      "is_available_in_shop": false,
+      "is_available_in_vendor_inventory": true,
+      "show_remaining_stock": false,
+      "warranty_id": "5DjNWD",
+      "shipment": {
+       "normal": {
+        "enabled": false
+       },
+       "asap": {
+        "enabled": true,
+        "has_next_day": false,
+        "next_day_percent": 0
+       },
+       "ship_by_seller": {
+        "enabled": false,
+        "start_time_estimation": 0,
+        "end_time_estimation": 0
+       },
+       "heavy": {
+        "enabled": false
+       },
+       "heavy_ship_by_seller": {
+        "enabled": false
+       },
+       "fbm": {
+        "enabled": false,
+        "fbm_percent": 0
+       }
+      },
+      "snapp_pay_installment": [],
+      "special_price_discount_type": "vendor",
+      "vendor_is_pro": null,
+      "vendor_authenticity": null
+     },
+     {
+      "vendor_product_info_id": "Z8Ax6o",
+      "vendor_id": "qEL18X",
+      "price": 642400,
+      "special_price": 280000,
+      "special_price_percent_discount": 57,
+      "price_changed_at": "2026-10-17T12:37:04+03:30",
+      "special-price_changed_at": "2026-11-03T19:36:28+03:30",
+      "stock": 10,
+      "vendor_rate": "very-good",
+      "is_available_in_shop": false,
+      "is_available_in_vendor_inventory": true,
+      "show_remaining_stock": false,
+      "warranty_id": "5DjNWD",
+      "shipment": {
+       "normal": {
+        "enabled": false
+       },
+       "asap": {
+        "enabled": false,
+        "has_next_day": false,
+        "next_day_percent": 0
+       },
+       "ship_by_seller": {
+        "enabled": false,
+        "start_time_estimation": 0,
+        "end_time_estimation": 0
+       },
+       "heavy": {
+        "enabled": false
+       },
+       "heavy_ship_by_seller": {
+        "enabled": false
+       },
+       "fbm": {
+        "enabled": true,
+        "fbm_percent": 50
+       }
+      },
+      "snapp_pay_installment": [],
+      "special_price_discount_type": "vendor",
+      "vendor_is_pro": null,
+      "vendor_authenticity": null
+     }
+    ],
+    "active_vendors": 43,
+    "min_price_vendor": null
+   }
+  ],
+  "default_variant": {
+   "variation_id": "0WdnlY",
+   "vendor_product_info_id": "dJKG5l",
+   "vendor_id": "gAkLXP",
+   "attribute": [],
+   "min_price_vendor": null
+  },
+  "vendors": [
+   {
+    "id": "gAkLXP",
+    "title": "داروخانه سیب سبز",
+    "title_en": "",
+    "href": "/seller/gAkLXP",
+    "logo": ""
+   },
+   {
+    "id": "gRyB2r",
+    "title": "داروخانه فارایران",
+    "title_en": "",
+    "href": "/seller/gRyB2r",
+    "logo": ""
+   },
+   {
+    "id": "qEL18X",
+    "title": "داروخانه الیندرا",
+    "title_en": "",
+    "href": "/seller/qEL18X",
+    "logo": ""
+   }
+  ],
+  "promotion": null,
+  "attributes": [
+   {
+    "id": "gNzXrg",
+    "title": "نام شرکت سازنده",
+    "value": "آرین سلامت سینا"
+   },
+   {
+    "id": "0X9Wbq",
+    "title": "ویتامین",
+    "value": "دارد"
+   },
+   {
+    "id": "gAndy0",
+    "title": "حاوی",
+    "value": "حاوی منیزیم دریایی، ویتامین‌های B6 ،B1 ،K و D3 طبیعی"
+   },
+   {
+    "id": "gA7VLq",
+    "title": "نوع محفظه",
+    "value": "قوطی"
+   }
+  ],
+  "categories": [
+   {
+    "id": null,
+    "title": "اسنپ شاپ",
+    "href": "/",
+    "target": "",
+    "rel": ""
+   },
+   {
+    "id": "60rdeD",
+    "title": "زیبایی و سلامت",
+    "href": "/category/health-beauty",
+    "target": "",
+    "rel": ""
+   },
+   {
+    "id": "AqZ87g",
+    "title": "مکمل های غذایی و دارویی",
+    "href": "/category/dietary-medicinal-supplements",
+    "target": "",
+    "rel": ""
+   },
+   {
+    "id": "XqnjYq",
+    "title": "مولتی ویتامین و مواد معدنی",
+    "href": "/category/multivitamins-minerals",
+    "target": "",
+    "rel": ""
+   }
+  ],
+  "content": {
+   "title_fa": "قرص مکمل منیزیم مگنیفورت آرین سلامت سینا بسته 32 عددی",
+   "title_en": null,
+   "description": "قرص مکمل منیزیم مگنیفورت آرین سلامت سینا، محصولی تخصصی برای حفظ سلامت عمومی بدن و کاهش گرفتگی‌ها و اسپاسم‌های عضلانی است. این مکمل با ترکیباتی مانند منیزیم دریایی و ویتامین‌های ضروری، به تنظیم فشار خو",
+   "meta_title": "",
+   "meta_description": "",
+   "is_fake": false
+  },
+  "warranties": [
+   {
+    "id": "5DjNWD",
+    "name": "تاریخ انقضا بالای 4 ماه",
+    "company_title": "اسنپ شاپ",
+    "duration": "4 ماه",
+    "description": ""
+   }
+  ],
+  "images": [
+   {
+    "id": "bE4EWn",
+    "src": "https://cdn.snappshop.ir/70/81/0/product_image/zoodfood/6395e7b4bbda5.jpg",
+    "alt": "قرص مکمل منیزیم مگنیفورت آرین سلامت سینا بسته 32 عددی"
+   },
+   {
+    "id": "R919vV",
+    "src": "https://cdn.snappshop.ir/70/81/0/product_image/zoodfood/6395e7b8a85b3.jpg",
+    "alt": "قرص مکمل منیزیم مگنیفورت آرین سلامت سینا بسته 32 عددی"
+   }
+  ],
+  "wishlist": {
+   "is_liked_by_user": false
+  },
+  "state": {
+   "star_rate": 4.6,
+   "comments_count": 233,
+   "rate_count": 2551,
+   "suggestion_percent_rate": 1.8,
+   "total_views": 0,
+   "total_purchasers": 0,
+   "can_view_review_images": false
+  },
+  "featured_attributes": [],
+  "warning_description": "این کالا توسط داروخانه‌های معتبر تأمین و ارسال می‌گردد. با توجه به ماهیت خاص و شرایط ویژه نگهداری و ارسال در گروه مکمل‌های غذایی و دارویی، مرجوعی به دلیل «انصراف از خرید» امکان‌پذیر نیست. درخواست بازگشت کالا تنها در صورت وجود «مغایرت» یا «ایراد ظاهری» قابل بررسی خواهد بود و آن هم مشروط به این‌که کالا در شرایط اولیه قرار داشته باشد (در صورت پلمب بودن، بسته‌بندی نباید باز شده باشد).",
+  "similar_category_id": "60rdeD",
+  "snapp_pay_installment": {
+   "title": "پرداخت اقساطی اسنپ پی",
+   "description": "۴ قسط ماهیانه (بدون کارمزد)"
+  },
+  "fab_activation": {
+   "pro": false,
+   "express": false,
+   "authenticity": false
+  }
+ }
+}

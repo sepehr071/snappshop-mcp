@@ -1,0 +1,76 @@
+{
+ "status": true,
+ "data": {
+  "menus": [
+   [
+    {
+     "id": 8,
+     "title": "همه دسته‌بندی‌ها",
+     "href": "/categories",
+     "children": [
+      {
+       "id": "af07cc65-591a-48c0-b6e1-062935bc2a79",
+       "title": "موبایل",
+       "href": "/category/mobile",
+       "icon": "BASKET_NOTIFICATION_ACTIVE",
+       "children": [
+        {
+         "id": "85c363f9-188a-4c99-8ca8-0a3ca69461c2",
+         "title": "گوشی‌ موبایل براساس برند",
+         "href": "/category/mobile",
+         "children": [
+          {
+           "id": "b7f3f159-9695-42fa-9c99-7eca0156a6b1",
+           "title": "گوشی‌ اپل (آیفون)",
+           "href": "/category/mobile/apple"
+          },
+          {
+           "id": "b67a4b80-493b-409f-a787-b5481425f151",
+           "title": "گوشی‌ سامسونگ",
+           "href": "/category/mobile/samsung"
+          },
+          {
+           "id": "f30f67bb-994c-4a15-ad52-ca30e0a76129",
+           "title": "گوشی‌ شیائومی",
+           "href": "/category/mobile/xiaomi"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "id": "d35a89ef-458d-4afd-8b86-2d3924ea99f8",
+       "title": "دیجیتال",
+       "href": "/category/digital",
+       "icon": "BASKET_NOTIFICATION_ACTIVE",
+       "children": [
+        {
+         "id": "1ce79763-cadf-4036-93ab-e9abc2a565ed",
+         "title": "تبلت براساس برند",
+         "href": "/category/tablet",
+         "children": [
+          {
+           "id": "1a80c31b-2888-496d-8bc5-160761d2c882",
+           "title": "تبلت اپل (آی‌پد)",
+           "href": "/category/tablet/apple"
+          },
+          {
+           "id": "441c3409-2550-43d0-85b1-3160993f33e7",
+           "title": "تبلت سامسونگ",
+           "href": "/category/tablet/samsung"
+          },
+          {
+           "id": "2ee8323d-a384-49d1-8f76-77a1fce54aa5",
+           "title": "تبلت‌ شیائومی",
+           "href": "/category/tablet/xiaomi"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  ]
+ }
+}
