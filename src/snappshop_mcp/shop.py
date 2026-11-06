@@ -21,23 +21,22 @@ SORTS = {
 }
 Sort = Annotated[
     Literal["popular", "cheapest", "priciest", "buyers_pick", "bestselling", "biggest_discount"] | None,
-    Field(description="Order of the list; the site default (no value) is its own relevance order."),
+    Field(description="List order; default is the site's relevance order."),
 ]
 MinPrice = Annotated[int | None, Field(ge=0, description="Lowest price in Toman (not Rial).")]
 MaxPrice = Annotated[int | None, Field(ge=0, description="Highest price in Toman (not Rial).")]
 Brands = Annotated[
     list[str] | None,
-    Field(description="Brand ids (6 characters) taken from `brands` in an earlier ss_search / ss_category answer."),
+    Field(description="Brand ids from `brands` of an earlier answer."),
 ]
-Page = Annotated[int, Field(ge=1, le=500, description="Page number, 12 items per page, starting at 1.")]
+Page = Annotated[int, Field(ge=1, le=500, description="12 items per page.")]
 Specs = Annotated[
     list[str] | None,
     Field(
-        description="Spec filters as 'filter=option', by name or id, e.g. ['حافظه داخلی=256 گیگابایت']. "
-        "One option per filter; names come from ss_filters."
+        description="'filter=option' (name or id, from ss_filters), e.g. ['حافظه داخلی=256 گیگابایت']. One option per filter."
     ),
 ]
-Colors = Annotated[list[str] | None, Field(description="Colour names or ids from ss_filters, e.g. ['مشکی'].")]
+Colors = Annotated[list[str] | None, Field(description="Colour names or ids from ss_filters.")]
 
 
 def _digits(href: str | None) -> int | None:
@@ -163,9 +162,7 @@ def _plp(resp: dict, page: int) -> dict:
 
 @tool("Search products")
 async def ss_search(
-    query: Annotated[
-        str, Field(min_length=1, description="What to look for, Persian or English, e.g. 'هدفون بلوتوثی'.")
-    ],
+    query: Annotated[str, Field(min_length=1, description="Persian or English, e.g. 'هدفون بلوتوثی'.")],
     sort: Sort = None,
     min_price: MinPrice = None,
     max_price: MaxPrice = None,
@@ -179,9 +176,8 @@ async def ss_search(
 ):
     """Search Snapp! Shop (اسنپ\u200cشاپ) products by name, with price, brand, spec, colour and delivery filters.
 
-    Use first to find a product; each item carries `id` (for ss_reviews / ss_similar) and `product_id` (for ss_product).
-    The first page also lists `brands` (ids for the `brands` filter). Prices are Toman, Tehran delivery.
-    A phrase nothing matches falls back to unrelated items, so check the titles.
+    Items carry `id` (ss_reviews / ss_similar) and `product_id` (ss_product); page 1 adds `brands`.
+    An unmatched phrase returns unrelated items, so check titles.
     """
     body = {**_list_body(sort, min_price, max_price, brands, in_stock, discounted, express), "query": query}
     await _apply_specs("search/v1", body, specs, colors)
@@ -193,10 +189,7 @@ async def ss_search(
 
 @tool("Search suggestions")
 async def ss_suggest(query: Annotated[str, Field(min_length=1, description="Start of a search phrase.")]):
-    """Complete a search phrase the way the site's search box does, most searched first.
-
-    Use to find the popular wording before ss_search. Returns `terms` with a popularity `score`.
-    """
+    """Complete a search phrase the way the site's search box does, most searched first."""
     d = (await fetch("search/v1/suggest", {"query": query, "limit": 8})).get("data") or {}
     terms = [
         {"term": c["term"], "score": c.get("score")}
@@ -229,15 +222,12 @@ def _menu(resp: dict) -> list[dict]:
 async def ss_categories(
     parent: Annotated[
         str | None,
-        Field(
-            description="A category path such as 'mobile' to list what is under it; empty lists the top-level categories."
-        ),
+        Field(description="Path such as 'mobile'; empty lists top-level categories."),
     ] = None,
 ):
     """List Snapp! Shop categories as `path` values that ss_category accepts.
 
-    Call with no argument for the top-level categories, then again with one of their paths for the subcategories and
-    brand pages below it.
+    No argument: top level; then pass a path for its subcategories and brand pages.
     """
     rows = _menu(await fetch("landing/v1/megamenu"))
     if parent is None:
@@ -263,9 +253,7 @@ def _category_body(path: str) -> dict[str, Any]:
 async def ss_category(
     path: Annotated[
         str,
-        Field(
-            description="Category path from ss_categories, one or two parts, e.g. 'mobile/samsung' or 'health-beauty/vitamins'."
-        ),
+        Field(description="Path from ss_categories, one or two parts, e.g. 'mobile/samsung'."),
     ],
     sort: Sort = None,
     min_price: MinPrice = None,
@@ -279,8 +267,7 @@ async def ss_category(
 ):
     """List the products of one Snapp! Shop category or category-brand page, with sort, price, spec and colour filters.
 
-    Use after ss_categories; ss_filters shows the spec names. A top-level path such as 'mobile' has no product list:
-    pick a subcategory.
+    Use after ss_categories. A top-level path such as 'mobile' has no list: pick a subcategory.
     """
     body = _list_body(sort, min_price, max_price, None, in_stock, discounted, express)
     body.update(_category_body(path))
@@ -316,14 +303,12 @@ def _product_id(value: str | int) -> str:
 async def ss_product(
     product: Annotated[
         str,
-        Field(
-            description="`product_id` from ss_search / ss_category (digits), 'snp-<digits>' or a snappshop.ir product URL."
-        ),
+        Field(description="`product_id` (digits), 'snp-<digits>' or a product URL."),
     ],
 ):
     """Get one product: specs, rating, and every seller's price, stock and delivery.
 
-    Offers are sorted cheapest first. `id` in the answer feeds ss_reviews and ss_similar. Prices are Toman.
+    Offers cheapest first. `id` and `category_id` feed ss_reviews / ss_similar.
     """
     d = (await fetch(f"products/v2/{_product_id(product)}")).get("data") or {}
     sellers = {v["id"]: v.get("title") for v in d.get("vendors") or []}
@@ -390,14 +375,12 @@ async def ss_product(
 
 @tool("Product reviews")
 async def ss_reviews(
-    id: Annotated[
-        str, Field(description="Product `id` (6 characters) from ss_search or ss_product, not the numeric product_id.")
-    ],
-    page: Annotated[int, Field(ge=1, le=100, description="Page number, 10 reviews per page.")] = 1,
+    id: Annotated[str, Field(description="Product `id` (6 characters), not the numeric product_id.")],
+    page: Annotated[int, Field(ge=1, le=100, description="10 reviews per page.")] = 1,
 ):
     """Read buyers' reviews of a product: score, title, text, pros and cons, helpful votes and date.
 
-    Reviewer names are left out. Use to check quality complaints before recommending a product.
+    Reviewer names are left out.
     """
     resp = await fetch(f"reviews/v2/product/{id}", {"page": page, "per_page": 10})
     out = []
@@ -423,18 +406,16 @@ async def ss_reviews(
 
 @tool("Similar products")
 async def ss_similar(
-    id: Annotated[str, Field(description="Product `id` (6 characters) from ss_search or ss_product.")],
+    id: Annotated[str, Field(description="Product `id` (6 characters).")],
     category_id: Annotated[str, Field(description="`category_id` from ss_product.")],
     kind: Annotated[
         Literal["similar", "accessories"],
-        Field(
-            description="'similar' = other products like this one; 'accessories' = what is sold with it (cases, glass)."
-        ),
+        Field(description="'similar' = alternatives; 'accessories' = cases, glass, etc."),
     ] = "similar",
 ):
     """Find alternatives to a product that Snapp! Shop shows under 'similar products'.
 
-    Use to compare prices of close substitutes. Items have the same fields as ss_search.
+    Items have the same fields as ss_search.
     """
     section = "CROSS_SELL" if kind == "similar" else "RELATED_SELL"
     resp = await fetch("search/v1/similar-products", {"section": section, "product_id": id, "category_id": category_id})
@@ -443,14 +424,11 @@ async def ss_similar(
 
 @tool("Seller products")
 async def ss_seller(
-    seller_id: Annotated[str, Field(description="`seller_id` (6 characters) from an offer in ss_product.")],
+    seller_id: Annotated[str, Field(description="`seller_id` from an ss_product offer.")],
     sort: Sort = None,
     page: Page = 1,
 ):
-    """List the products one seller (فروشنده) offers on Snapp! Shop.
-
-    Use to see what else a pharmacy or shop sells after reading its offer in ss_product.
-    """
+    """List the products one seller (فروشنده) offers on Snapp! Shop."""
     body = _list_body(sort, None, None, None, False, False, False)
     # The seller page itself (landing/v2, page_type vendor) lists in the site's order; search/v1 with a vendor filter differs.
     body.update({"slug": seller_id, "exclude_filters": True, "page_type": "vendor", "referrer": ""})
@@ -487,14 +465,12 @@ def _filter_view(f: dict, limit: int = 40) -> dict:
 
 @tool("List filters")
 async def ss_filters(
-    path: Annotated[
-        str | None, Field(description="Category path such as 'mobile/samsung' (from ss_categories).")
-    ] = None,
-    query: Annotated[str | None, Field(description="Or a search phrase, as in ss_search.")] = None,
+    path: Annotated[str | None, Field(description="Category path such as 'mobile/samsung'.")] = None,
+    query: Annotated[str | None, Field(description="Or a search phrase.")] = None,
 ):
     """Show the filters Snapp! Shop offers for a category or search: price range, colours, brands and spec filters.
 
-    Give `path` or `query`. Use the names in `specs` / `colors` / `brands` of ss_category and ss_search.
+    Give `path` or `query`. Call before using specs / colors / brands.
     """
     if bool(path) == bool(query):
         raise ToolError("Give exactly one of path or query.")
@@ -517,13 +493,13 @@ async def ss_filters(
 
 @tool("Brand page")
 async def ss_brand(
-    slug: Annotated[str, Field(description="Brand slug from a site URL snappshop.ir/brand/<slug>, e.g. 'samsung'.")],
+    slug: Annotated[str, Field(description="Slug from snappshop.ir/brand/<slug>, e.g. 'samsung'.")],
     sort: Sort = None,
     page: Page = 1,
 ):
     """List the products of one brand page on Snapp! Shop.
 
-    Use when you know the brand slug (it is in brand links on the site); for a brand inside a category use ss_category.
+    For a brand inside a category use ss_category.
     """
     body = _list_body(sort, None, None, None, False, False, False)
     slug = slug.strip("/").removeprefix("brand/")
@@ -545,7 +521,7 @@ async def ss_brand(
 
 @tool("Collection products")
 async def ss_collection(
-    id: Annotated[str, Field(description="Collection id (6 characters) from ss_promotions: a flash sale or carousel.")],
+    id: Annotated[str, Field(description="`collection_id` from ss_promotions.")],
     sort: Sort = None,
     page: Page = 1,
 ):
@@ -589,14 +565,13 @@ async def ss_promotions(
     page: Annotated[
         str,
         Field(
-            description="'home', or 'campaign/<slug>' (e.g. campaign/supermarket), 'landing/<slug>' "
-            "(e.g. landing/mother-and-baby), 'collection/<slug>' (e.g. collection/flagship-phone)."
+            description="'home', 'campaign/<slug>', 'landing/<slug>' or 'collection/<slug>' (slugs from site links)."
         ),
     ] = "home",
 ):
     """Show what Snapp! Shop is promoting: flash sales with end times, carousels, campaign pages and top products.
 
-    Each product section has a `collection_id` for ss_collection (all its products). Slugs appear in links on the site.
+    Product sections carry a `collection_id` for ss_collection.
     """
     kind, _, slug = page.strip("/").partition("/")
     body: dict[str, Any] = {"render": 4, "referrer": ""}
@@ -637,12 +612,12 @@ async def ss_promotions(
 async def ss_compare(
     products: Annotated[
         list[str],
-        Field(min_length=2, max_length=4, description="2-4 products: numeric product_id, 'snp-<digits>' or URL."),
+        Field(min_length=2, max_length=4, description="product_id, 'snp-<digits>' or URL."),
     ],
 ):
     """Compare 2-4 products side by side: price, rating, seller count and the specs that differ.
 
-    Use after ss_search to choose between candidates. `specs` lists only rows whose values differ, in product order.
+    `specs` lists only differing rows, in product order.
     """
     cards = [await ss_product(p) for p in products]
     keys = list(dict.fromkeys(k for c in cards for k in c["specs"]))
