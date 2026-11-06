@@ -1,6 +1,6 @@
 [project]
 name = "snappshop-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "Unofficial read-only MCP server for Snapp! Shop (snappshop.ir): search products, browse categories, compare seller offers in Toman, read reviews."
 readme = "README.md"
 license = "MIT"
