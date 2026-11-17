@@ -1,9 +1,9 @@
 [project]
 name = "snappshop-mcp"
-version = "0.2.0"
+version = "0.2.1"
 description = "Unofficial read-only MCP server for Snapp! Shop (snappshop.ir): search products, browse categories, compare seller offers in Toman, read reviews."
 readme = "README.md"
-license = "MIT"
+license = "PolyForm-Noncommercial-1.0.0"
 license-files = ["LICENSE"]
 authors = [{ name = "Sepehr Radmard", email = "sepehrr80@gmail.com" }]
 requires-python = ">=3.10"
