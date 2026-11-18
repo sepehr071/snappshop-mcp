@@ -19,7 +19,7 @@ search products, compare every seller's price in Toman, filter by specs, read bu
 [![Install in Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=snappshop&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyJzbmFwcHNob3AtbWNwIl19)
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_snappshop--mcp-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=snappshop&config=%7B%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22snappshop-mcp%22%5D%7D)
 
-[For AI agents](#for-ai-agents) · [Why](#why) · [What it can do](#what-it-can-do) · [Quick start](#quick-start) · [Tools](#tools) · [How it works](#how-it-works) · [Good to know](#good-to-know) · [FAQ](#faq) · [Configuration](#configuration) · [فارسی](#فارسی) · [Development](#development)
+[For AI agents](#for-ai-agents) · [Why](#why) · [What it can do](#what-it-can-do) · [Quick start](#quick-start) · [Tools](#tools) · [Good to know](#good-to-know) · [FAQ](#faq) · [Configuration](#configuration) · [فارسی](#فارسی) · [Development](#development)
 
 </div>
 
@@ -191,15 +191,6 @@ All tools are read-only. Lists return 12 items per page (`page` starts at 1).
 
 Filters use names, not ids: `specs=["حافظه داخلی=256 گیگابایت"]`, `colors=["مشکی"]`. Call `ss_filters` first to see
 what a category offers.
-
-## How it works
-
-The server calls the same JSON API (`apix.snappshop.ir`) that the Snapp! Shop web app uses, with the guest token the
-site hands to every visitor. Requests go out with a Chrome TLS fingerprint and the headers the site's own frontend
-sends, so they look like normal browsing. One shared HTTP client caches reads for 60 seconds, limits concurrency,
-retries timeouts and server errors, and refuses any host except `apix.snappshop.ir`.
-
-Nothing is stored and nothing is sent anywhere else. There is no login: the server cannot see or change an account.
 
 ## Good to know
 
